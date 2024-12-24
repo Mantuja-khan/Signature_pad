@@ -1,0 +1,37 @@
+.container {
+    padding: 0.75rem;
+    min-width: 280px;
+  }
+  
+  .colorGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+  }
+  
+  @media (max-width: 640px) {
+    .container {
+      min-width: 240px;
+    }
+    
+    .colorGrid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .colorButton {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    transition: transform 0.2s;
+  }
+  
+  .colorButton:hover {
+    transform: scale(1.1);
+  }
+  
+  .active {
+    transform: scale(1.1);
+    outline: 2px solid #9ca3af;
+    outline-offset: 2px;
+  }

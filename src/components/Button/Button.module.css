@@ -1,0 +1,53 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  
+  @media (min-width: 640px) {
+    .button {
+      padding: 0.75rem 1.5rem;
+    }
+  }
+  
+  .label {
+    display: none;
+  }
+  
+  @media (min-width: 640px) {
+    .label {
+      display: inline;
+    }
+  }
+  
+  .primary {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .primary:hover {
+    background-color: #2563eb;
+  }
+  
+  .primary:active {
+    background-color: #1d4ed8;
+  }
+  
+  .danger {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .danger:hover {
+    background-color: #dc2626;
+  }
+  
+  .danger:active {
+    background-color: #b91c1c;
+  }

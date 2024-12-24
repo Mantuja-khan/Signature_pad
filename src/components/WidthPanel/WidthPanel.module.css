@@ -1,0 +1,45 @@
+.container {
+    padding: 0.75rem;
+    min-width: 280px;
+  }
+  
+  .widthGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+  }
+  
+  @media (max-width: 640px) {
+    .container {
+      min-width: 240px;
+    }
+    
+    .widthGrid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .widthButton {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    transition: all 0.2s;
+  }
+  
+  .widthButton:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .active {
+    background-color: #1f2937;
+    color: white;
+  }
+  
+  .dot {
+    border-radius: 9999px;
+    background-color: currentColor;
+  }
