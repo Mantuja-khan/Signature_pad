@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Signature_pad/static/css/main.1591b0f2.css",
-    "main.js": "/Signature_pad/static/js/main.567d4c9b.js",
+    "main.css": "/Signature_pad/static/css/main.0211e393.css",
+    "main.js": "/Signature_pad/static/js/main.2a726988.js",
     "index.html": "/Signature_pad/index.html",
-    "main.1591b0f2.css.map": "/Signature_pad/static/css/main.1591b0f2.css.map",
-    "main.567d4c9b.js.map": "/Signature_pad/static/js/main.567d4c9b.js.map"
+    "main.0211e393.css.map": "/Signature_pad/static/css/main.0211e393.css.map",
+    "main.2a726988.js.map": "/Signature_pad/static/js/main.2a726988.js.map"
   },
   "entrypoints": [
-    "static/css/main.1591b0f2.css",
-    "static/js/main.567d4c9b.js"
+    "static/css/main.0211e393.css",
+    "static/js/main.2a726988.js"
   ]
 }
