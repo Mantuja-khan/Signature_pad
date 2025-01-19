@@ -11,11 +11,12 @@ import { useTouchDrawing } from '../../hooks/useTouchDrawing';
 
 const SignaturePad = () => {
   const canvasRef = useRef(null);
-  const [currentColor, setCurrentColor] = useState('#000000');
+  const [currentColor, setCurrentColor] = useState('#1f2937');
   const [currentWidth, setCurrentWidth] = useState(2);
   const [showColorPanel, setShowColorPanel] = useState(false);
   const [showWidthPanel, setShowWidthPanel] = useState(false);
-  
+  const [isCursorInside, setIsCursorInside] = useState(false); // Track cursor status
+
   const { initializeCanvas, clearSignature, downloadSignature } = useTouchDrawing(
     canvasRef,
     currentColor,
@@ -40,7 +41,7 @@ const SignaturePad = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Digital Signature Pad</h1>
-        
+
         <div className={styles.padContainer}>
           <div className={styles.controls}>
             <Dropdown
@@ -49,7 +50,7 @@ const SignaturePad = () => {
               isOpen={showColorPanel}
               onToggle={toggleColorPanel}
             >
-              <ColorPanel 
+              <ColorPanel
                 onColorChange={(color) => {
                   setCurrentColor(color);
                   setShowColorPanel(false);
@@ -64,7 +65,7 @@ const SignaturePad = () => {
               isOpen={showWidthPanel}
               onToggle={toggleWidthPanel}
             >
-              <WidthPanel 
+              <WidthPanel
                 onWidthChange={(width) => {
                   setCurrentWidth(width);
                   setShowWidthPanel(false);
@@ -73,14 +74,19 @@ const SignaturePad = () => {
               />
             </Dropdown>
           </div>
-          
+
           <div className={styles.canvasWrapper}>
             <canvas
               ref={canvasRef}
               className={styles.canvas}
+              style={{
+                cursor: isCursorInside ? 'crosshair' : 'default', // Dynamic cursor style
+              }}
+              onMouseEnter={() => setIsCursorInside(true)} // Set cursor to black (crosshair)
+              onMouseLeave={() => setIsCursorInside(false)} // Revert to default
             />
           </div>
-          
+
           <div className={styles.buttonContainer}>
             <Button
               onClick={clearSignature}
@@ -102,4 +108,5 @@ const SignaturePad = () => {
     </div>
   );
 };
+
 export default SignaturePad;
